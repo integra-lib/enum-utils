@@ -1,7 +1,7 @@
 #pragma once
 #include <type_traits>
 
-namespace integra
+namespace hwlib::utilities
 {
 
 /// @brief Convert an enumerator to its underlying value
@@ -14,4 +14,4 @@ template<typename Enum, typename = std::enable_if_t<std::is_enum_v<Enum>>>
     return static_cast<std::underlying_type_t<Enum>>(value);
 }
 
-} // namespace integra
+} // namespace hwlib::utilities

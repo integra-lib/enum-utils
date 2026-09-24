@@ -2,23 +2,23 @@
 
 Enumerator to its underlying value, keeping the underlying type.
 
-Part of [integra-lib](https://github.com/integra-lib) — architecture-independent C++20
+Part of [hwlib](https://github.com/integra-lib) — architecture-independent C++20
 components shared between firmware projects. Header-only,
 no exceptions, no RTTI.
 
 ## Use it
 
 ```bash
-git submodule add git@github.com:integra-lib/enum-utils.git external/integra/enum-utils
+git submodule add git@github.com:integra-lib/enum-utils.git external/hwlib/enum-utils
 ```
 
 ```cmake
-add_subdirectory(external/integra/enum-utils)
-target_link_libraries(app PRIVATE Integra::enum_utils)
+add_subdirectory(external/hwlib/enum-utils)
+target_link_libraries(app PRIVATE Hwlib::enum_utils)
 ```
 
 ```cpp
-#include <integra/enum_utils.hpp>
+#include <hwlib/utilities/enum_utils.hpp>
 ```
 
 Each component carries its own include directory, so this header stays unreachable
@@ -31,9 +31,9 @@ Every component is released on its own, tagged `vX.Y.Z`. Pre-1.0, a minor releas
 break the API, which is why dependants accept a single minor.
 
 ```bash
-git -C external/integra/enum-utils fetch --tags
-git -C external/integra/enum-utils checkout v0.2.0
-git add external/integra/enum-utils && git commit -m "build: bump enum-utils to v0.2.0"
+git -C external/hwlib/enum-utils fetch --tags
+git -C external/hwlib/enum-utils checkout v0.2.0
+git add external/hwlib/enum-utils && git commit -m "build: bump enum-utils to v0.2.0"
 ```
 
 ## In a consumer's CI
